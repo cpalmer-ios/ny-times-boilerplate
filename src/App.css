@@ -37,14 +37,29 @@
   }
 }
 
-.article__title {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  kerning: condensed; 
-  
+.article__card {
+  width: 100%;
+  position: relative;
+  display: inline-block;
 }
 
-.article__img {
-  width: 5rem;
+.article__title {
+  position: relative;
+  display: block;
+  width: 100%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  kerning: condensed; 
+}
+
+.article__img_0,
+.article__img_1,
+.article__img_2,
+.article__img_3 {
+  display: none;
+}
+.article__img_4
+ {
+  width: 50%;
 }
 
 .article__strapline {

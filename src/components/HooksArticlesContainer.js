@@ -15,20 +15,21 @@ function HooksArticlesContainer() {
         <h2>{data.error}</h2>
       ) : (
         <div>
-          <h2>Content List</h2>
+          <h2>Top Stories</h2>
           <div>
             {data &&
               data.articles &&
               data.articles.map((article) => (
-                <div key={article.created_date}>
+                <div className="article__card" key={article.created_date}>
+
                   <h2 className="article__title">{article.title}</h2>
                   <p className="article__category"><strong>{article.section} - </strong>{article.subsection}</p>
+
+                  {article.multimedia.map((img, index) => (
+                  <img className={'article__img_'+index} src={img.url}></img>
+                  ))}
                   <p className="article__strapline"><em>{article.abstract}</em></p> 
                   <p className="article__author"><strong>{article.byline}</strong></p>
-
-                  {article.multimedia.map((img) => (
-                  <img className="article__img" src={img.url}></img>
-                  ))}
 
                 </div>
               ))}
