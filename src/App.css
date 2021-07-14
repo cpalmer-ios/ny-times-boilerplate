@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+.article__title {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  kerning: condensed; 
+  
+}
+
+.article__img {
+  width: 5rem;
+}
+
+.article__strapline {
+
+}

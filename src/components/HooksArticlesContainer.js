@@ -7,7 +7,7 @@ function HooksArticlesContainer() {
   const dispatch = useDispatch();
   return (
     <div>
-      <h2>Fetch Content with Hooks</h2>
+      <h2>Fetch The New York Times Top Stories with React Hooks</h2>
       <button onClick={() => dispatch(fetchArticles())}>Fetch Data</button>
       {data.loading ? (
         <h2>Loading...</h2>
@@ -21,12 +21,15 @@ function HooksArticlesContainer() {
               data.articles &&
               data.articles.map((article) => (
                 <div key={article.created_date}>
-                  <p>{article.section}</p>
-                  <p>{article.subsection}</p>
-                  <p>{article.title}</p>
-                  <p>{article.abstract}</p> 
-                  <p>{article.byline}</p>
-                  <img src={article.multimedia[0]}></img>
+                  <h2 className="article__title">{article.title}</h2>
+                  <p className="article__category"><strong>{article.section} - </strong>{article.subsection}</p>
+                  <p className="article__strapline"><em>{article.abstract}</em></p> 
+                  <p className="article__author"><strong>{article.byline}</strong></p>
+
+                  {article.multimedia.map((img) => (
+                  <img className="article__img" src={img.url}></img>
+                  ))}
+
                 </div>
               ))}
           </div>
