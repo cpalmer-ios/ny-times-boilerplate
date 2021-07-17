@@ -1,7 +1,7 @@
 import { FETCH_ARTICLES_REQUEST, FETCH_ARTICLES_SUCCESS, FETCH_ARTICLES_FAILURE } from "./articlesTypes";
 
 export const initialState = {
-    loading: true,
+    loading: false,
     articles: [],
     error: ''
 }
@@ -24,7 +24,7 @@ export const articlesReducer = (state = initialState, action) => {
     case FETCH_ARTICLES_FAILURE:
         return {
             ...state,
-            loading: false,
+            loading: true,
             articles: [],
             error: action.payload.results
         }

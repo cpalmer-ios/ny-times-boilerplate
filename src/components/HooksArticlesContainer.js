@@ -7,8 +7,7 @@ function HooksArticlesContainer() {
   const dispatch = useDispatch();
   return (
     <div>
-      <h2>Fetch The New York Times Top Stories with React Hooks</h2>
-      <button onClick={() => dispatch(fetchArticles())}>Fetch Data</button>
+      <button onClick={() => dispatch(fetchArticles())}>Fetch Articles</button>
       {data.loading ? (
         <h2>Loading...</h2>
       ) : data.error ? (
